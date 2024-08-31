@@ -218,6 +218,6 @@ button:disabled {
     }
 
     .container__imagem-pessoa {
-        display: none;
+        display: block; /* Garante que a imagem esteja visível em telas pequenas */
     }
 }
