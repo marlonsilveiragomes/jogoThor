@@ -11,9 +11,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    position: relative;
 }
 
+/* Background image */
 body::before {
     background-image: url("img/code.png");
     background-repeat: no-repeat;
@@ -26,46 +27,55 @@ body::before {
     opacity: 0.4;
 }
 
+/* Container */
 .container {
-    width: 80%;
-    height: 80%;
+    width: 90%; /* Ajustado para caber melhor em dispositivos móveis */
+    max-width: 800px; /* Tamanho máximo do container */
+    height: auto; /* Altura automática */
     display: flex;
+    flex-direction: column; /* Empilha o conteúdo verticalmente */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 24px;
     border: 1px solid #1875E8;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
     background-image: url("img/Ruido.png");
-    background-size: 100% 100%;
+    background-size: cover; /* Ajusta o tamanho da imagem de fundo */
+    position: relative;
+    padding: 1rem; /* Espaçamento interno */
+}
+
+/* Conteúdo do container */
+.container__conteudo {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Empilha o conteúdo verticalmente */
+    align-items: center;
     position: relative;
 }
 
-.container__conteudo {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-}
-
+/* Informações dentro do container */
 .container__informacoes {
-    flex: 1;
-    padding: 3rem;
-    margin-top: 2rem; /* Ajuste este valor conforme necessário */
+    width: 100%;
+    padding: 2rem; /* Ajuste o padding para caber melhor em telas menores */
 }
 
+/* Botão */
 .container__botao {
     border-radius: 16px;
     background: #1875E8;
     padding: 16px 24px;
     width: 100%;
-    font-size: 24px;
+    font-size: 18px; /* Ajustado para tamanhos menores */
     font-weight: 700;
     border: none;
-    margin-top: 2rem;
+    margin-top: 1rem; /* Ajuste a margem superior */
 }
 
+/* Texto */
 .container__texto {
-    margin: 30px 0 20px 0;
+    margin: 1rem 0;
+    text-align: center;
 }
 
 .container__texto-azul {
@@ -79,38 +89,40 @@ body::before {
     background-color: #FFF;
     border: none;
     color: #1875E8;
-    padding: 2rem;
-    font-size: 24px;
+    padding: 1rem;
+    font-size: 18px; /* Ajustado para tamanhos menores */
     font-weight: 700;
     font-family: 'Inter', sans-serif;
 }
 
 .container__botoes {
     display: flex;
-    gap: 2em;
+    flex-direction: column; /* Empilha os botões verticalmente */
+    gap: 1em; /* Espaço entre os botões */
+}
+
+h1, h2 {
+    text-align: center;
 }
 
 h1 {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 40px;
-    padding-bottom: 3rem;
-    text-align: center;
+    font-size: 24px; /* Ajustado para tamanhos menores */
+    padding-bottom: 1rem;
 }
 
 h2 {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 50px;
-    padding-bottom: 3rem;
-    text-align: center;
+    font-size: 20px; /* Ajustado para tamanhos menores */
+    padding-bottom: 1rem;
 }
 
-p,
-button {
+p, button {
     font-family: 'Inter', sans-serif;
 }
 
 .texto__paragrafo {
-    font-size: 32px;
+    font-size: 18px; /* Ajustado para tamanhos menores */
     font-weight: 400;
 }
 
@@ -118,106 +130,23 @@ button:disabled {
     background-color: gray;
 }
 
-@media screen and (max-width: 1250px) {
-    h1 {
-        font-size: 50px;
-    }
-
-    .container__botao {
-        font-size: 16px;
-    }
-
-    .texto__paragrafo {
-        font-size: 24px;
-    }
-
-    .container__imagem-pessoa {
-        display: none;
-    }
-
-    .container__conteudo {
-        display: block;
-        position: inherit;
-    }
-
-    .container__informacoes {
-        padding: 1rem;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 90%;
-        height: auto;
-        padding: 2rem;
-        border-radius: 16px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 44px;
-    }
-
-    .texto__paragrafo {
-        font-size: 24px;
-    }
-
-    .container__input {
-        font-size: 20px;
-        height: 56px;
-        padding: 1.5rem;
-    }
-
-    .container__botao {
-        font-size: 18px;
-        padding: 14px 20px;
-    }
-}
-
+/* Estilos para dispositivos móveis */
 @media screen and (max-width: 600px) {
-    body {
-        padding: 1rem;
-    }
-
-    .container {
-        width: 100%;
-        height: auto;
-        padding: 1rem;
-        border-radius: 12px;
-        box-shadow: none;
-    }
-
-    .container__informacoes {
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
-    h2 {
-        font-size: 40px;
-    }
-
-    .texto__paragrafo {
-        font-size: 18px;
-    }
-
-    .container__input {
-        font-size: 18px;
-        height: 48px;
-        padding: 1rem;
-    }
-
-    .container__botao {
-        font-size: 14px;
-        padding: 12px 16px;
-    }
-
     .container__imagem-pessoa {
         display: block; /* Garante que a imagem esteja visível em telas pequenas */
+        width: 100%;
+        max-width: none; /* Remove o limite máximo de largura */
+    }
+
+    .container__botao {
+        font-size: 16px; /* Ajustado para tamanhos menores */
+    }
+
+    .texto__paragrafo {
+        font-size: 16px; /* Ajustado para tamanhos menores */
+    }
+
+    .container__informacoes {
+        padding: 1rem; /* Ajuste o padding para caber melhor em telas menores */
     }
 }
